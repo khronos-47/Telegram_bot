@@ -9,6 +9,8 @@ from pytube import YouTube, Search
 import requests
 from requests import get
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
+import uvloop
+asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 
 #token = '1675623193:AAGuJo2e2EBO4m2GHsQVthRA0M46gYuFTL0'
 token = '1655671816:AAFdrX2jOt7Xr9LhDCNGIKp1q_opu2VN7U0'   #calc
