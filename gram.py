@@ -9,9 +9,11 @@ from pytube import YouTube, Search
 import requests
 from requests import get
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
-import uvloop
-asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
-
+try:
+	import uvloop
+	asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+except:
+	pass
 #token = '1675623193:AAGuJo2e2EBO4m2GHsQVthRA0M46gYuFTL0'
 token = '1655671816:AAFdrX2jOt7Xr9LhDCNGIKp1q_opu2VN7U0'   #calc
 admin_id =[]
@@ -35,7 +37,7 @@ dedict={}
 #_____________________________________________________________________________________________________
 @dp.message_handler(commands=['start'])
 async def start (message: Message):
-	await bot.send_message(chat_id=message.chat.id , text='hello')
+	await bot.send_message(chat_id=message.chat.id , text='hello my client')
 #_____________________________________________________________________________________________________
 @dp.message_handler(content_types='video')
 async def video_handler(message: Message):
